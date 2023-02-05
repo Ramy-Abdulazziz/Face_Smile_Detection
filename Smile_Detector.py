@@ -1,5 +1,5 @@
-import numpy as np
 import cv2 as cv
+import Drawing_Functions as df
 
 
 class SmileDetectorHaar:
@@ -44,28 +44,4 @@ class SmileDetectorHaar:
         x, y = smiles[0] + face_x, smiles[1] + face_y
         w, h = smiles[2], smiles[3]
 
-        spts_lcorn_top = np.array([[x + (w//4), y],
-                                   [x, y],
-                                   [x, y + (h//4)]],
-                                  np.int32)
-
-        spts_lcorn_bot = np.array([[x, (y + h) - (h//4)],
-                                   [x, (y + h)],
-                                   [(x + (w//4)), (y + h)]],
-                                  np.int32)
-
-        spts_rcorn_top = np.array([[x + w - (w//4), y],
-                                   [x + w, y],
-                                   [x + w, y + (h//4)]],
-                                  np.int32)
-
-        spts_rcorn_bot = np.array([[x + w - (w//4), y + h],
-                                   [x + w, y + h],
-                                   [x + w, y + h - (h//4)]],
-                                  np.int32)
-
-        smile_frame = [spts_lcorn_top, spts_lcorn_bot,
-                       spts_rcorn_top, spts_rcorn_bot]
-        smile_frame = [x.reshape((-1, 1, 2)) for x in smile_frame]
-
-        return smile_frame
+        return df.createSquareCornerFrame(x,y,w,h)
