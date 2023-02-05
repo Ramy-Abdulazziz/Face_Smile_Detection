@@ -41,7 +41,7 @@ class FaceSmileDetectorHaar:
     def getFrame(self):
         return self.frame
 
-    def GrayEqualizeHist(self):
+    def grayEqualizeHist(self):
 
         gray_frame_eq = cv.cvtColor(self.frame, cv.COLOR_BGR2GRAY)
         self.gray_frame = cv.equalizeHist(gray_frame_eq)
@@ -64,7 +64,7 @@ class FaceSmileDetectorHaar:
 
     def detectionSequence(self):
 
-        self.GrayEqualizeHist()
+        self.grayEqualizeHist()
         faces = self.face_detector.detect_faces()
 
         for face in faces:
