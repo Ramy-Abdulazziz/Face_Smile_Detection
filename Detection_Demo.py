@@ -28,8 +28,8 @@ def closeWindows(capture: cv.VideoCapture):
 
 if __name__ == "__main__":
 
-    path_to_face_cascade = cv.data.haarcascades + "haarcascade_frontalface_default.xml"
-    path_to_smile_casade = cv.data.haarcascades + "haarcascade_smile.xml"
+    path_to_face_cascade = f"{cv.data.haarcascades}haarcascade_frontalface_default.xml"
+    path_to_smile_casade = f"{cv.data.haarcascades}haarcascade_smile.xml"
 
     capture = initInputSource(0)
     face_smile_detector = fsdh(path_to_face_cascade, path_to_smile_casade,
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
         detectAndWait(capture, face_smile_detector)
 
-        if cv.waitKey(1) == ord('q'):
+        if (cv.waitKey(1) == ord('q')) or (cv.waitKey(1) == ord('Q')):
             break
 
     closeWindows(capture)

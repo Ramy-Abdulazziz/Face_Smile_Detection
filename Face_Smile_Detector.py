@@ -81,3 +81,5 @@ class FaceSmileDetectorHaar:
             for smile in smiles:
 
                 self.detectSmilesAndDraw(self.frame, smile, face_coords_frame)
+                cv.putText(self.frame, "Smile Detected", (int(face_coords_frame[0] * .95), int(face_coords_frame[1] * 0.5)) , cv.FONT_HERSHEY_COMPLEX, 0.75,
+                    self.smile_detect_color, self.smile_detect_thickness, cv.LINE_AA)
