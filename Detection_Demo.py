@@ -29,8 +29,8 @@ def closeWindows(capture: cv.VideoCapture):
 
 if __name__ == "__main__":
 
-    path_to_face_cascade = "C:\\Users\\ramya\\OPEN-CV\\opencv\\sources\\data\\haarcascades\\haarcascade_frontalface_default.xml"
-    path_to_smile_casade = "C:\\Users\\ramya\\OPEN-CV\\opencv\\sources\\data\\haarcascades\\haarcascade_smile.xml"
+    path_to_face_cascade = cv.data.haarcascades + "haarcascade_frontalface_default.xml"
+    path_to_smile_casade = cv.data.haarcascades + "haarcascade_smile.xml"
 
     capture = initInputSource(0)
     face_smile_detector = fsdh(path_to_face_cascade, path_to_smile_casade,

@@ -1,4 +1,3 @@
-import numpy as np
 import cv2 as cv
 from Face_Detector import FaceDetectorHaar as fdh
 from Smile_Detector import SmileDetectorHaar as sdh
@@ -11,17 +10,19 @@ class FaceSmileDetectorHaar:
                  path_to_smile_casade,
                  face_detect_color=(255, 0, 255),
                  smile_detect_color=(255, 255, 0),
-                 face_detect_thickness : int =5,
-                 smile_detect_thickness : int =3,
-                 face_detect_scale_factor = 1.05,
-                 smile_detect_scale_factor = 1.3,
-                 face_detect_nearest_neighbor = 6,
-                 smile_detect_nearest_neighbor = 25,
+                 face_detect_thickness: int = 5,
+                 smile_detect_thickness: int = 3,
+                 face_detect_scale_factor=1.05,
+                 smile_detect_scale_factor=1.3,
+                 face_detect_nearest_neighbor=6,
+                 smile_detect_nearest_neighbor=25,
 
                  ):
 
-        self.face_detector = fdh(path_to_face_cascade, face_detect_scale_factor, face_detect_nearest_neighbor)
-        self.smile_detector = sdh(path_to_smile_casade, smile_detect_scale_factor, smile_detect_nearest_neighbor)
+        self.face_detector = fdh(
+            path_to_face_cascade, face_detect_scale_factor, face_detect_nearest_neighbor)
+        self.smile_detector = sdh(
+            path_to_smile_casade, smile_detect_scale_factor, smile_detect_nearest_neighbor)
 
         self.face_detect_color = face_detect_color
         self.smile_detect_color = smile_detect_color
