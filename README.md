@@ -18,7 +18,7 @@ These classes act as a convienent wrapper for instantiating instances of each de
 
 opencv-python can be installed easily following the provided [documentation](https://github.com/opencv/opencv-python). Usually a simple : 
 
-```pip install opencv-python1```
+```pip install opencv-python```
 
 is all it takes. 
 
