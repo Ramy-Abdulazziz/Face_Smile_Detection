@@ -1,6 +1,6 @@
-import cv2 as cv
 from Face_Detector import FaceDetectorHaar as fdh
 from Smile_Detector import SmileDetectorHaar as sdh
+import cv2 as cv
 
 
 class FaceSmileDetectorHaar:

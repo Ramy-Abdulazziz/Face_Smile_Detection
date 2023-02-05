@@ -1,6 +1,5 @@
-import numpy as np
-import cv2 as cv
 from Face_Smile_Detector import FaceSmileDetectorHaar as fsdh
+import cv2 as cv
 
 
 def detectAndWait(capture: cv.VideoCapture(), face_smile_detector: fsdh):

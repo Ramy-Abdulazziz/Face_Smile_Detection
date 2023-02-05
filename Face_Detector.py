@@ -1,5 +1,5 @@
-import cv2 as cv
 import Drawing_Functions as df
+import cv2 as cv
 
 
 class FaceDetectorHaar:
